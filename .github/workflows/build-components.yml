@@ -54,7 +54,6 @@ jobs:
           git push
 
       - name: Update component in Xano
-        if: steps.git-check.outputs.changes == 'true'
         run: |
           # Wait for GitHub CDN to propagate (jsDelivr)
           sleep 5
