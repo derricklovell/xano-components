@@ -58,8 +58,8 @@ jobs:
           # Wait for GitHub CDN to propagate (jsDelivr)
           sleep 5
           
-          # Call Xano API to update component
-          curl -X POST "${{ secrets.XANO_API_URL }}/o-B1LTj7/update/component" \
+          # Call Xano API to update component - using API route
+          curl -X POST "${{ secrets.XANO_API_URL }}/api:o-B1LTj7/update/component" \
             -H "Content-Type: application/json" \
             -d '{
               "component_id": 36,
