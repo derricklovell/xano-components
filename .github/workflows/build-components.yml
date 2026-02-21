@@ -4,6 +4,12 @@ on:
   push:
     branches: [main]
     paths: ['src/**']
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Git ref to build'
+        required: false
+        default: 'main'
 
 jobs:
   build:
