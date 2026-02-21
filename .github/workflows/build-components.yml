@@ -52,3 +52,20 @@ jobs:
           git config --local user.name "GitHub Action"
           git commit -m "chore: build components [skip ci]"
           git push
+
+      - name: Update component in Xano
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          # Wait for GitHub CDN to propagate (jsDelivr)
+          sleep 5
+          
+          # Call Xano API to update component
+          curl -X POST "${{ secrets.XANO_API_URL }}/o-B1LTj7/update/component" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "component_id": 36,
+              "repo_id": 2,
+              "js_path": "order-again/order-again-component.js",
+              "css_path": "order-again/order-again-component.css",
+              "branch": "main"
+            }'
