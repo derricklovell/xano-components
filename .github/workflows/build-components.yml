@@ -61,6 +61,7 @@ jobs:
           # Call Xano API to update component - using API route
           curl -X POST "${{ secrets.XANO_API_URL }}/api:o-B1LTj7/update/component" \
             -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.XANO_API_KEY }}" \
             -d '{
               "component_id": 36,
               "repo_id": 2,
