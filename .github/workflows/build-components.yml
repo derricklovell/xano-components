@@ -1,4 +1,5 @@
 name: Build Components
+# Auto-build on src changes
 
 on:
   push:
