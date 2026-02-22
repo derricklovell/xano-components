@@ -68,5 +68,5 @@ jobs:
               "repo_id": 2,
               "js_path": "order-again/order-again-component.js",
               "css_path": "order-again/order-again-component.css",
-              "branch": "main"
+              "branch": "latest"
             }'
